@@ -5,7 +5,6 @@ import { useThemeHook } from "./Globals/ThemeProvider";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// Pages
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
