@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 import { useCart } from "react-use-cart";
 import { BsCartPlus } from "react-icons/bs";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
   let { image, price, title, id } = props.data;
@@ -17,7 +17,7 @@ const ProductCard = (props) => {
     <Card
       style={{ width: "18rem", height: "auto" }}
       className={`${
-        theme ? "bg-light-black text-light" : "bg-lihgt text-black"
+        theme ? "bg-light-black text-light" : "bg-light text-black"
       } text-center p-0 overflow-hidden shadow mx-auto mb-4`}
     >
       <Link to={`/product-details/${id}`}>

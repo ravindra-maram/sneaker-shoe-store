@@ -10,13 +10,13 @@ import {
   Button,
   Badge,
 } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 import Heading from "../components/Heading";
-import profilePix from "../images/profile-picture.png";
+import profilePix from "../assets/images/profile-picture.png";
 import { FaClipboardList, FaUser } from "react-icons/fa";
 import { GiWallet } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
-import "./my-account.css";
+import "./Account.css";
 import OrderCard from "../components/OrderCard";
 
 const Account = () => {

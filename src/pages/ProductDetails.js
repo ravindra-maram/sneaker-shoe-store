@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 import Lightbox from "react-lightbox-component";
 import "react-lightbox-component/build/css/index.css";
-import "./product-details.css";
+import "./ProductDetails.css";
 import { useCart } from "react-use-cart";
 import { BsCartPlus } from "react-icons/bs";
 

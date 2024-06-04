@@ -8,10 +8,10 @@ import {
   Spinner,
   InputGroup,
 } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
-import { Link, useNavigate } from "@reach/router";
+import { useThemeHook } from "../Globals/ThemeProvider";
+import { Link, useNavigate } from "react-router-dom";
 
-//icons
+// Icons
 import { AiOutlineUser } from "react-icons/ai";
 import { VscKey } from "react-icons/vsc";
 
@@ -47,6 +47,7 @@ const LogIn = () => {
         });
     }
   };
+
   return (
     <Container className="py-5 mt-5">
       <Row className="justify-content-center mt-5">
@@ -111,7 +112,7 @@ const LogIn = () => {
                   &nbsp;Loading...
                 </>
               ) : (
-                "Sign in"
+                "Log In"
               )}
             </Button>
             <Form.Group className="mt-3 text-center">

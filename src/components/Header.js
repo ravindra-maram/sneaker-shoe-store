@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { ThemeContext } from "../GlobalComponents/ThemeProvider";
+import { ThemeContext } from "../Globals/ThemeProvider";
 import { BiSun, BiMoon, BiCart } from "react-icons/bi";
 import { VscAccount } from "react-icons/vsc";
-import { Link } from "@reach/router";
+import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
 
 const Header = () => {
@@ -12,7 +12,6 @@ const Header = () => {
 
   useEffect(() => {
     setThemeMode(darkMode);
-    console.log(darkMode);
   }, [darkMode]);
 
   const { isEmpty, totalItems } = useCart();
@@ -39,7 +38,7 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Link
-              to="sign-in"
+              to="/log-in"
               className={`nav-link ${
                 darkMode ? "text-dark-primary" : "text-light-primary"
               }`}
@@ -71,7 +70,7 @@ const Header = () => {
               </span>
             </Link>
             <Link
-              to="my-account"
+              to="/my-account"
               className={`nav-link ${
                 darkMode ? "text-dark-primary" : "text-light-primary"
               }`}

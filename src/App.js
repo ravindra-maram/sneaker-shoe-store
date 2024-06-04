@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useThemeHook } from "./Globals/ThemeProvider";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+// Pages
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import ProductDetails from "./pages/ProductDetails";
+import LogIn from "./Auth/LogIn";
+import Register from "./Auth/Register";
+import Account from "./pages/Account";
 
 function App() {
+  const [theme] = useThemeHook();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main
+      className={theme ? "bg-black" : "bg-light-2"}
+      style={{ height: "100vh", overflowY: "auto" }}
+    >
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/my-account" element={<Account />} />
+          <Route path="/log-in" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/product-details/:productId"
+            element={<ProductDetails />}
+          />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </main>
   );
 }
 

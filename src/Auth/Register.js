@@ -8,7 +8,7 @@ import {
   Spinner,
   InputGroup,
 } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/high-res.css";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Row, Col, Badge } from "react-bootstrap";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 
 const OrderCard = (props) => {
   const [theme] = useThemeHook();

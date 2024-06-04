@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeHook } from "../GlobalComponents/ThemeProvider";
+import { useThemeHook } from "../Globals/ThemeProvider";
 
 const Heading = (props) => {
   const [theme] = useThemeHook();
