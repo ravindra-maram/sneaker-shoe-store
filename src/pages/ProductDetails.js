@@ -6,22 +6,23 @@ import "react-lightbox-component/build/css/index.css";
 import "./ProductDetails.css";
 import { useCart } from "react-use-cart";
 import { BsCartPlus } from "react-icons/bs";
+import { products } from "../data";
 
 const ProductDetails = (props) => {
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState({});
   const [theme] = useThemeHook();
   const { addItem } = useCart();
 
   useEffect(() => {
-    getResponse();
-  }, []);
+    const product = products.find((p) => p.id === parseInt(props.productId));
+    console.log(product);
+    setProductData(product);
+  }, [props.productId]);
 
-  const getResponse = async () => {
-    const res = await fetch(
-      `https://fakestoreapi.com/products/${props.productId}`
-    ).then((res) => res.json());
-    setProductData(await res);
-  };
+  if (!productData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Container className="py-5">
       <Row className="justify-content-center mt-5">
@@ -31,22 +32,32 @@ const ProductDetails = (props) => {
               {
                 src: productData.image,
                 title: productData.title,
-                description: "img 1",
+                description: productData.description,
               },
               {
                 src: productData.image,
                 title: productData.title,
-                description: "img 2",
+                description: ProductDetails.description,
               },
               {
                 src: productData.image,
                 title: productData.title,
-                description: "img 3",
+                description: ProductDetails.description,
               },
               {
                 src: productData.image,
                 title: productData.title,
-                description: "img 4",
+                description: ProductDetails.description,
+              },
+              {
+                src: productData.image,
+                title: productData.title,
+                description: ProductDetails.description,
+              },
+              {
+                src: productData.image,
+                title: productData.title,
+                description: ProductDetails.description,
               },
             ]}
           />
@@ -74,7 +85,7 @@ const ProductDetails = (props) => {
               theme ? "text-dark-primary" : "text-light-primary"
             } h4 mt-3 d-block`}
           >
-            Rs. {productData.price}
+            $ {productData.price}
           </b>
           <br />
           <b className="h5">4.1 ⭐</b>

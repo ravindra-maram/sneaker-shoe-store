@@ -4,6 +4,7 @@ import { useThemeHook } from "../Globals/ThemeProvider";
 import { useCart } from "react-use-cart";
 import { BsCartPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import "./ProductCard.css"; // Ensure you import the CSS file
 
 const ProductCard = (props) => {
   let { image, price, title, id } = props.data;
@@ -13,10 +14,11 @@ const ProductCard = (props) => {
   const addToCart = () => {
     addItem(props.data);
   };
+
   return (
     <Card
       style={{ width: "18rem", height: "auto" }}
-      className={`${
+      className={`product-card ${
         theme ? "bg-light-black text-light" : "bg-light text-black"
       } text-center p-0 overflow-hidden shadow mx-auto mb-4`}
     >
@@ -32,7 +34,7 @@ const ProductCard = (props) => {
             marginBottom: "inherit",
           }}
         >
-          <div style={{ width: "9rem" }}>
+          <div style={{ width: "100%", height: "100%" }}>
             <Card.Img variant="top" src={image} className="img-fluid" />
           </div>
         </div>

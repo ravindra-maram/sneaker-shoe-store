@@ -26,13 +26,15 @@
   background-color: #dadcde;
 }
 .bg-light-primary{
-  background-color: #191659 !important;
+  background-color: #ba691d !important;
 }
 .text-light-primary{
-  color: #191659 !important;
+  color: #ba691d !important;
 }
 
 
 .react-tel-input input{
   width: 100% !important;
 }
+
+

@@ -1,0 +1,9 @@
+.product-card {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

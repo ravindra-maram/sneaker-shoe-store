@@ -28,7 +28,7 @@ const Register = () => {
 
     if (username && password && firstname && lastname && email && number) {
       setLoading(true);
-      console.log("call api here");
+      console.log("API goes here....");
       console.log(username, password, firstname, lastname, email, number);
     }
   };
